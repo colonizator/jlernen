@@ -5,6 +5,8 @@
  */
 package aufgabe1;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author Mikhail
@@ -21,11 +23,21 @@ package aufgabe1;
  */
 public class Aufgabe1 {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        System.out.println("Hello Christian");
+        int auswahl = 0;
+        String eingabe = JOptionPane.showInputDialog(null, "Tragen Sie Ihren Namen ein", "die Nameeingabe", 
+                JOptionPane.QUESTION_MESSAGE);
+        
+        if (auswahl == JOptionPane.OK_OPTION && eingabe != null) {
+            JOptionPane.showMessageDialog(null, "Hallo " + eingabe, "das Ergebnis", 
+                JOptionPane.PLAIN_MESSAGE);
+            System.out.println("Hallo " + eingabe);
+        } else {
+          System.out.println("Bye stranger!");  
+          System.exit(0);  
+        }
+        
+        
     }
     
 }
